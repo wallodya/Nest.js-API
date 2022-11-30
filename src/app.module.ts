@@ -5,12 +5,11 @@ import { SequelizeModule } from '@nestjs/sequelize'
 import { UsersModule } from './users/users.module'
 import { ConfigModule } from '@nestjs/config'
 import { User } from "./users/users.model"
-import { RoleService } from './role/role.service';
-import { RoleController } from './role/role.controller';
 import { RoleModule } from './role/role.module';
 import { Role } from "./role/role.model"
 import { UserRoles } from "./role/userRoles.model"
-console.log(process.env.NODE_ENV)
+import { AuthModule } from "./auth/auth.module"
+
 @Module({
 	exports: [],
 	imports: [
@@ -28,7 +27,8 @@ console.log(process.env.NODE_ENV)
             autoLoadModels: true
 		}),
 		UsersModule,
-		RoleModule, 
+		RoleModule,
+        AuthModule
 	],
 	controllers: [],
 	providers: [],
