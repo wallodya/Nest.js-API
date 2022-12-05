@@ -37,6 +37,10 @@ export class AuthService {
 		if (user && isPasswordCorrect) {
 			return user
 		}
+        console.log('dto from validateUser: ')
+        console.log(dto)
+        console.log(user)
+        console.log('isPasswordCorrect', isPasswordCorrect)
 		throw new UnauthorizedException({ message: "Wrong email or password" })
 	}
 

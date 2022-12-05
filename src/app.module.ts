@@ -9,6 +9,8 @@ import { RoleModule } from './role/role.module';
 import { Role } from "./role/role.model"
 import { UserRoles } from "./role/userRoles.model"
 import { AuthModule } from "./auth/auth.module"
+import { PostsController } from './posts/posts.controller';
+import { PostsModule } from './posts/posts.module';
 
 @Module({
 	exports: [],
@@ -28,9 +30,10 @@ import { AuthModule } from "./auth/auth.module"
 		}),
 		UsersModule,
 		RoleModule,
-        AuthModule
+        AuthModule,
+        PostsModule
 	],
-	controllers: [],
+	controllers: [PostsController],
 	providers: [],
 })
 export class AppModule {}
